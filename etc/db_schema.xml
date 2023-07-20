@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © PHPDigital, Inc. All rights reserved.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="special_article" resource="default" engine="innodb" comment="Special Article">
+        <column xsi:type="int" name="article_id" unsigned="true" nullable="false" identity="true"
+                comment="Article ID"/>
+        <column xsi:type="text" name="image_url" unsigned="true" nullable="true" identity="false"
+                comment="Image Url"/>
+        <column xsi:type="varchar" name="title" unsigned="true" nullable="true" identity="false" length="255"
+                comment="Title"/>
+        <column xsi:type="text" name="description" unsigned="true" nullable="true" identity="false"
+                comment="Description"/>
+        <column xsi:type="text" name="url" unsigned="true" nullable="true" identity="false"
+                comment="Url"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Created At"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Updated At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="article_id"/>
+        </constraint>
+        <index referenceId="SEPCIAL_ARTICLE_TITLE_DESCRIPTION_FULLTEXT" indexType="fulltext">
+            <column name="title"/>
+            <column name="description"/>
+        </index>
+    </table>
+</schema>

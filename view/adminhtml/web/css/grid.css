@@ -1,0 +1,12 @@
+
+
+.special-article-index .admin__data-grid-wrap .data-grid td.data-grid-preview-image-cell img {
+	background: #fff;
+    border: 1px solid #d6d6d6;
+    cursor: pointer;
+    max-height: 150px;
+    object-fit: cover;
+    object-position: top;
+    padding: 5px;
+    width: 100%;
+}
